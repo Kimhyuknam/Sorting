@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>My Parse App</title>
+  <meta name="description" content="My Parse App">
+  <meta name="viewport" content="width=device-width">
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  
+  <script type="text/javascript" src="https://npmcdn.com/parse@2.1.0/dist/parse.min.js"></script>
+
+</head>
+
+<body1>
+  <h1>Sort Example</h1>
+  <br>
+  <h2>한글 정렬1</h2>
+  <button onclick="myFunction1()">한글정순정렬</button>
+  <p id="demo1"></p>
+  <script type="text/javascript">
+    Parse.initialize("KIMHYUKNAM");
+    Parse.serverURL= "http://localhost:1337/parse"
+    
+    var Animal = ["코뿔소", "강아지", "호랑이", "여우"];
+    document.getElementById("demo1").innerHTML = Animal;
+    function myFunction1(){
+    Animal.sort();
+    document.getElementById("demo1").innerHTML = Animal;
+  }
+</script>
+</body1>
+
+<body2>
+  <h2>한글 정렬2</h2>
+  <button onclick="myFunction2()">한글역순정렬</button>
+  <p id="demo2"></p>
+  <script>
+    Parse.initialize("KIMHYUKNAM");
+    Parse.serverURL= "http://localhost:1337/parse"
+   
+    var fruits = ["바나나", "오렌지", "사과", "망고"];
+    document.getElementById("demo2").innerHTML = fruits;
+    function myFunction2(){
+    fruits.sort();
+    fruits.reverse();
+    document.getElementById("demo2").innerHTML = fruits;
+  }
+</script>
+</body2>
+
+<body3>
+  <h2>숫자 정렬1</h2>
+  <button onclick="myFunction3()">숫자오름차순</button>
+  <p id="demo3"></p>
+  <script>
+    Parse.initialize("KIMHYUKNAM");
+    Parse.serverURL= "http://localhost:1337/parse"
+    
+    var points1 = [231, 412, 51113, 789, 1, 658];
+    document.getElementById("demo3").innerHTML = points1;
+    function myFunction3(){
+    points1.sort(function(a, b){return a - b});
+    document.getElementById("demo3").innerHTML = points1;
+  }
+</script>
+</body3>
+
+<body4>
+  <h2>숫자 정렬2</h2>
+  <button onclick="myFunction4()">숫자내림차순</button>
+  <p id="demo4"></p>
+  <script>
+    Parse.initialize("KIMHYUKNAM");
+    Parse.serverURL= "http://localhost:1337/parse"
+
+    var points2 = [40, 100, 1, 5, 25, 10];
+    document.getElementById("demo4").innerHTML = points2;
+    function myFunction4(){
+      points2.sort(function(a, b){return b - a});
+      document.getElementById("demo4").innerHTML = points2;
+    }
+  </script>
+  </html>
